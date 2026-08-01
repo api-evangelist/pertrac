@@ -1,7 +1,24 @@
 aid: pertrac
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/pertrac.png
 name: PerTrac
-description: PerTrac is a company surfaced as a portfolio company of insight-partners and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: PerTrac was a hedge-fund and alternative-investment analytics software provider
+  (portfolio analytics, asset allocation, and manager/database research for institutional
+  investors), surfaced as an insight-partners portfolio company. As of this enrichment the
+  PerTrac brand has been folded into Nasdaq eVestment — www.pertrac.com redirects to
+  nasdaq.com/solutions/evestment/ — and there is no standalone PerTrac developer portal,
+  documentation, OpenAPI definition, or public API surface. This profile is retained as a
+  network record; any live API surface now lives under the Nasdaq eVestment product.
 url: https://raw.githubusercontent.com/api-evangelist/pertrac/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,9 +28,13 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
+- Hedge Funds
+- Investment Analytics
+- Financial Data
+- Portfolio Management
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -21,5 +42,18 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/pertrac-domain-security.yml
 - type: Website
   url: http://www.pertrac.com/
+x-enrichment:
+  date: '2026-07-20'
+  status: nochange
+  artifacts_added: 0
+  pass: local-v1
+  note: Re-verified — www.pertrac.com 301-redirects via www.evestment.com to
+    nasdaq.com/solutions/evestment/; brand folded into Nasdaq eVestment; no
+    standalone API surface, OpenAPI, or developer portal. All /.well-known/*
+    probes return 301 redirects (no 200 discovery docs). Existing domain-security
+    probe artifact remains the only real artifact; no OpenAPI means nothing to
+    derive. Nothing new to add this pass.
